@@ -7,7 +7,7 @@ const Div = styled.div`
 export const App = () => {
 	return (
 		<Div>
-			<i className="fa fa-camera-retro"></i>
+			<i className="fa fa-calendar"></i>
 			<div>БЛОГ</div>
 		</Div>
 	);
