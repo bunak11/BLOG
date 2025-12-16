@@ -15,7 +15,7 @@
 
 Таблицы БД:
 
-- пользователи - user: id / login / password / registred_at / role_id
+- пользователи - users: id / login / password / registred_at / role_id
 - роли - roles: id / name
 
 - статьи - posts: id / title / image_url / content / published_at
