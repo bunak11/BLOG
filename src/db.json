@@ -3,7 +3,7 @@
 		{
 			"id": "001",
 			"login": "admin",
-			"password": "admin",
+			"password": "admin123",
 			"registered_at": "2024-01-01T00:00:00Z",
 			"role_id": 0
 		}
