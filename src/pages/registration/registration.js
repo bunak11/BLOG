@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { server } from "../../bff";
-import {AuthFormError, Button, H2, Input } from "../../components/";
-import {useResetForm} from '../../hooks';
+import { AuthFormError, Button, H2, Input } from "../../components/";
+import { useResetForm } from "../../hooks";
 import styled from "styled-components";
 import { selectUserRole } from "../../selectors";
 import { setUser } from "../../actions";
@@ -34,7 +34,6 @@ const regFormSchema = yup.object().shape({
 		.oneOf([yup.ref("password"), null], "Повтор пароля не совпадает"),
 });
 
-
 //описываем форму с помощью хука useForm
 const RegistrationContainer = ({ className }) => {
 	const {
@@ -56,7 +55,6 @@ const RegistrationContainer = ({ className }) => {
 	const [serverError, setServerError] = useState(null);
 
 	const dispatch = useDispatch();
-
 
 	const roleId = useSelector(selectUserRole);
 

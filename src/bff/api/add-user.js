@@ -1,11 +1,9 @@
-
-
-import { generateDate } from "./generate-date";
+import { generateDate } from "../utils/generate-date";
 
 //для записи в базу данных нового пользователя нужно вызвать fetch с методои post и передать все требуемые поля
 
 export const addUser = (login, password) =>
-	fetch("http://localhost:3005/users", {
+	fetch('http://localhost:3005/users', {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json;charset=utf-8",
@@ -17,3 +15,7 @@ export const addUser = (login, password) =>
 			role_id: 2,
 		}),
 	}).then((createdUser) => createdUser.json());
+
+
+
+

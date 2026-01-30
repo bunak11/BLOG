@@ -8,24 +8,17 @@
       "role_id": 0
     },
     {
-      "id": "cc01",
-      "login": "pavel",
-      "password": "pavel123",
-      "registered_at": "2061-01-18 19:52",
-      "role_id": 2
-    },
-    {
-      "id": "bfcb",
-      "login": "bunak11",
-      "password": "bunak11",
-      "registered_at": "2042-09-16 06:59",
-      "role_id": 2
-    },
-    {
       "id": "681f",
       "login": "arseniy",
       "password": "arseniy123",
       "registered_at": "2062-06-04 17:01",
+      "role_id": 1
+    },
+    {
+      "id": "97f7",
+      "login": "ivan99",
+      "password": "ivan123",
+      "registered_at": "2045-08-28 14:32",
       "role_id": 2
     }
   ],
