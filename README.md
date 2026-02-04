@@ -19,7 +19,7 @@
 - роли - roles: id / name
 
 - статьи - posts: id / title / image_url / content / published_at
-- коментарии - coments: id / author_id / post_id / content
+- коментарии - coments: id / author_id / post_id / content/ published_at
 
 Определить схему состояния на BFF.
 
@@ -33,3 +33,6 @@
 - post: id/ title / imageUrl / content / publishedAt
   / comments: массив comment: id/ author/ content /publishedAt
 - users: массив user: id / login / registeredAt/ role
+
+
+

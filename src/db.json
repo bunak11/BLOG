@@ -107,10 +107,111 @@
   ],
   "comments": [
     {
-      "id": "001",
       "author_id": "001",
       "post_id": "001",
-      "content": "This is the content of the first comment."
+      "published_at": "2047-09-07 20:05",
+      "content": "gwefwef",
+      "id": 1
+    },
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2052-06-09 21:41",
+      "content": "sdbdrdb",
+      "id": 2
+    },
+    {
+      "author_id": "681f",
+      "post_id": "001",
+      "published_at": "2045-07-09 17:36",
+      "content": "комментарий Арсения",
+      "id": 3
+    },
+    {
+      "author_id": "681f",
+      "post_id": "001",
+      "published_at": "2048-10-14 10:34",
+      "content": "еще комментарий Арсения",
+      "id": 4
+    }
+  ],
+  "sessions": [
+    {
+      "hash": "0.32156340330703481189544845619820989668369293212891",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 1
+    },
+    {
+      "hash": "0.84088170211077639670804728666553273797035217285156",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 2
+    },
+    {
+      "hash": "0.93106576016773101578394289390416815876960754394531",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 3
+    },
+    {
+      "hash": "0.64795325103108103448334986751433461904525756835938",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 4
+    },
+    {
+      "hash": "0.49558594409273182268549362561316229403018951416016",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 5
+    },
+    {
+      "hash": "0.11266805529453793877081579921650700271129608154297",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 6
+    },
+    {
+      "hash": "0.80177380323366997938450140281929634511470794677734",
+      "user": {
+        "id": "681f",
+        "login": "arseniy",
+        "password": "arseniy123",
+        "registeredAt": "2062-06-04 17:01",
+        "roleId": 1
+      },
+      "id": 7
     }
   ]
 }
