@@ -114,20 +114,6 @@
       "id": 1
     },
     {
-      "author_id": "001",
-      "post_id": "001",
-      "published_at": "2052-06-09 21:41",
-      "content": "sdbdrdb",
-      "id": 2
-    },
-    {
-      "author_id": "681f",
-      "post_id": "001",
-      "published_at": "2045-07-09 17:36",
-      "content": "комментарий Арсения",
-      "id": 3
-    },
-    {
       "author_id": "681f",
       "post_id": "001",
       "published_at": "2048-10-14 10:34",
@@ -212,6 +198,28 @@
         "roleId": 1
       },
       "id": 7
+    },
+    {
+      "hash": "0.94922906400077111666035989401279948651790618896484",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 8
+    },
+    {
+      "hash": "0.69474131172351039076318102161167189478874206542969",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 9
     }
   ]
 }

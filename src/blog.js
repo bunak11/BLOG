@@ -1,9 +1,9 @@
 import { useLayoutEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { Header, Footer } from "./components";
+import { useDispatch } from "react-redux";
+import { Header, Footer, Modal } from "./components";
 import { Authorization, Registration, Post, Users } from "./pages";
-import { setUser } from './actions';
+import { setUser } from "./actions";
 import styled from "styled-components";
 
 const AppColumn = styled.div`
@@ -25,25 +25,24 @@ const Page = styled.div`
 // `;
 
 export const Blog = () => {
-
 	const dispatch = useDispatch();
 
-useLayoutEffect(() => {
-	const curentUserDataJSON = sessionStorage.getItem('userData');
+	useLayoutEffect(() => {
+		const curentUserDataJSON = sessionStorage.getItem("userData");
 
-	if (!curentUserDataJSON) {
-		return;
-	}
+		if (!curentUserDataJSON) {
+			return;
+		}
 
-	const curentUserData = JSON.parse(curentUserDataJSON);
+		const curentUserData = JSON.parse(curentUserDataJSON);
 
-	dispatch(setUser({
-		...curentUserData,
-		roleId: Number(curentUserData.roleId),
-}));
-
-
-},[dispatch]);
+		dispatch(
+			setUser({
+				...curentUserData,
+				roleId: Number(curentUserData.roleId),
+			}),
+		);
+	}, [dispatch]);
 
 	return (
 		<AppColumn>
@@ -60,6 +59,7 @@ useLayoutEffect(() => {
 				</Routes>
 			</Page>
 			<Footer />
+			<Modal />
 		</AppColumn>
 	);
 };
