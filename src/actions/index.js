@@ -7,4 +7,6 @@ export * from "./add-comment-async";
 export * from "./remove-comment-async";
 export * from "./open-modal";
 export * from "./close-modal";
-export * from './save-post-async.js';
+export * from "./save-post-async.js";
+export * from "./remove-post-async.js";
+export * from "./reset-post-data";

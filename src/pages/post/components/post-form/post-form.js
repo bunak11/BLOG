@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { SpecialPanel } from "../special-panel/special-panel";
@@ -12,50 +12,54 @@ const PostFormContainer = ({
 	className,
 	post: { id, title, imageUrl, content, publishedAt },
 }) => {
-	const imageRef = useRef(null);
-	const titleRef = useRef(null);
+	const [imageUrlValue, setImageUrlValue] = useState(imageUrl);
+	const [titleUrlValue, setTitleUrlValue] = useState(title);
 	const contentRef = useRef(null);
+
+
+	useLayoutEffect(() => {
+		setImageUrlValue(imageUrl);
+		setTitleUrlValue(title);
+	}, [imageUrl, title]);
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const requestServer = useServerRequest();
 
 	const onSave = () => {
-		const newImageUrl = imageRef.current.value;
-		const newTitle = titleRef.current.value;
 		const newContent = sanizeContent(contentRef.current.innerHTML);
 
 		dispatch(
 			savePostAsync(requestServer, {
 				id,
-				title: newTitle,
-				imageUrl: newImageUrl,
+				title: titleUrlValue,
+				imageUrl: imageUrlValue,
 				content: newContent,
 			}),
-		).then((value) => navigate(`/post/${id}`));
+		).then(({id}) => navigate(`/post/${id}`));
 	};
+
+	const onImageChange = ({ target }) => setImageUrlValue(target.value);
+	const onTitleChange = ({ target }) => setTitleUrlValue(target.value);
 
 	return (
 		<div className={className}>
 			<Input
-				ref={imageRef}
-				defaultValue={imageUrl}
+				value={imageUrlValue}
 				placeholder="Изображение..."
+				onChange={onImageChange}
 			/>
 			<Input
-				ref={titleRef}
-				defaultValue={title}
+				value={titleUrlValue}
 				здфсурщдвук="Заголовок..."
+				onChange={onTitleChange}
 			/>
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
 				margin="20px 0 "
 				editButton={
-					<Icon
-						id="fa-floppy-o"
-						margin="0 10px 0 0"
-						onClick={onSave}
-					/>
+					<Icon id="fa-floppy-o" size="21px" onClick={onSave} />
 				}
 			/>
 
@@ -78,6 +82,8 @@ export const PostForm = styled(PostFormContainer)`
 	}
 
 	& .post-text {
+		min-height: 80px;
+		border: 1px solid #000;
 		font-size: 18px;
 		white-space: pre-line;
 	}
