@@ -73,7 +73,6 @@ export const PostCard = styled(PostCardContainer)`
 	}
 
 	& h4 {
-		
 		margin: 0;
 	}
 `;
