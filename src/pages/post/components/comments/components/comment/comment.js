@@ -1,27 +1,41 @@
-import styled from "styled-components";
 import { Icon } from "../../../../../../components";
-import {openModal, CLOSE_MODAL, removeCommentAsync} from '../../../../../../actions';
-import { useDispatch } from "react-redux";
+import {
+	openModal,
+	CLOSE_MODAL,
+	removeCommentAsync,
+} from "../../../../../../actions";
+import { useDispatch, useSelector } from "react-redux";
 import { useServerRequest } from "../../../../../../hooks";
+import { selectUserRole } from "../../../../../../selectors";
+import styled from "styled-components";
+import { ROLE } from "../../../../../../constants";
 
-const CommentContainer = ({ className, postId, id,  author, content, publishedAt }) => {
-
+const CommentContainer = ({
+	className,
+	postId,
+	id,
+	author,
+	content,
+	publishedAt,
+}) => {
 	const dispatch = useDispatch();
 	const requestServer = useServerRequest();
+	const useRole = useSelector(selectUserRole);
 
 	const onCommentRemove = (id) => {
-		dispatch(openModal({
-			text: 'Удалить комментарий?',
-			onConfirm: () => {
-				dispatch(removeCommentAsync(requestServer, postId, id))
-				dispatch(CLOSE_MODAL);
-			},
-			onCancel: () => dispatch(CLOSE_MODAL),
-
-		}));
-
-
+		dispatch(
+			openModal({
+				text: "Удалить комментарий?",
+				onConfirm: () => {
+					dispatch(removeCommentAsync(requestServer, postId, id));
+					dispatch(CLOSE_MODAL);
+				},
+				onCancel: () => dispatch(CLOSE_MODAL),
+			}),
+		);
 	};
+
+	const isAdminOrModerator = [ROLE.ADMIN, ROLE.MODERATOR].includes(useRole);
 
 	return (
 		<div className={className}>
@@ -50,12 +64,14 @@ const CommentContainer = ({ className, postId, id,  author, content, publishedAt
 				</div>
 				<div className="comment-text">{content}</div>
 			</div>
-			<Icon
-				id="fa-trash-o"
-				margin="0 0 0 10px"
-				size="21px"
-				onClick={() => onCommentRemove(id)}
-			/>
+			{isAdminOrModerator && (
+				<Icon
+					id="fa-trash-o"
+					margin="0 0 0 10px"
+					size="21px"
+					onClick={() => onCommentRemove(id)}
+				/>
+			)}
 		</div>
 	);
 };
@@ -63,8 +79,6 @@ const CommentContainer = ({ className, postId, id,  author, content, publishedAt
 export const Comment = styled(CommentContainer)`
 	display: flex;
 	margin-top: 10px;
-
-
 
 	& .comment {
 		width: 100%;

@@ -20,6 +20,7 @@ const PostContainer = ({ className }) => {
 	const requestServer = useServerRequest();
 	const post = useSelector(selectPost);
 
+
 	useLayoutEffect(() => {
 		dispatch(RESET_POST_DATA);
 	}, [dispatch, isCreating]);
@@ -40,6 +41,8 @@ const PostContainer = ({ className }) => {
 		return null;
 	}
 
+
+
 	const SpecificPostPage =
 		isCreating || isEditing ? (
 			<PrivateContent access={[ROLE.ADMIN]} serverError={error}>
@@ -52,6 +55,7 @@ const PostContainer = ({ className }) => {
 				<PostContent post={post} />
 				<Comments comments={post.comments} postId={post.id} />
 			</div>
+
 		);
 
 	return error ? <Error error={error} /> : SpecificPostPage;

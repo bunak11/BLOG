@@ -26,6 +26,7 @@ padding: 0 35px;
 & .current-page {
 width: 100%;
 height: 32px;
+margin: 0 5px;
 font-size:18px;
 font-weight: 500;
 line-height: 26px;
