@@ -168,6 +168,20 @@
       "published_at": "2052-11-01 02:39",
       "content": "Комментарий от Арсения",
       "id": 7
+    },
+    {
+      "author_id": "001",
+      "post_id": "002",
+      "published_at": "2043-11-28 01:20",
+      "content": "gdrggdrhst stthrt",
+      "id": 8
+    },
+    {
+      "author_id": "001",
+      "post_id": "005",
+      "published_at": "2042-05-29 20:21",
+      "content": "esrgwegw45gw45",
+      "id": 9
     }
   ],
   "sessions": [
@@ -500,6 +514,17 @@
         "roleId": 1
       },
       "id": 30
+    },
+    {
+      "hash": "0.40678944373694048142198198547703213989734649658203",
+      "user": {
+        "id": "001",
+        "login": "admin",
+        "password": "admin123",
+        "registeredAt": "2024-01-01T00:00:00Z",
+        "roleId": 0
+      },
+      "id": 31
     }
   ]
 }

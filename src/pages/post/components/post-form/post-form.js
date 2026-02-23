@@ -7,6 +7,7 @@ import { Icon, Input } from "../../../../components";
 import { savePostAsync } from "../../../../actions";
 import styled from "styled-components";
 import { useServerRequest } from "../../../../hooks";
+import { PROP_TYPE } from "../../../../constants";
 
 const PostFormContainer = ({
 	className,
@@ -15,7 +16,6 @@ const PostFormContainer = ({
 	const [imageUrlValue, setImageUrlValue] = useState(imageUrl);
 	const [titleUrlValue, setTitleUrlValue] = useState(title);
 	const contentRef = useRef(null);
-
 
 	useLayoutEffect(() => {
 		setImageUrlValue(imageUrl);
@@ -36,7 +36,7 @@ const PostFormContainer = ({
 				imageUrl: imageUrlValue,
 				content: newContent,
 			}),
-		).then(({id}) => navigate(`/post/${id}`));
+		).then(({ id }) => navigate(`/post/${id}`));
 	};
 
 	const onImageChange = ({ target }) => setImageUrlValue(target.value);
@@ -59,7 +59,12 @@ const PostFormContainer = ({
 				publishedAt={publishedAt}
 				margin="20px 0 "
 				editButton={
-					<Icon id="fa-floppy-o" size="21px" margin="0 10px 0 0" onClick={onSave} />
+					<Icon
+						id="fa-floppy-o"
+						size="21px"
+						margin="0 10px 0 0"
+						onClick={onSave}
+					/>
 				}
 			/>
 
@@ -88,3 +93,6 @@ export const PostForm = styled(PostFormContainer)`
 		white-space: pre-line;
 	}
 `;
+PostForm.propTypes = {
+	post: PROP_TYPE.POST.isRequired,
+};
